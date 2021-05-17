@@ -1,9 +1,9 @@
 <?php
 
-$dbHost = "localhost";
-$dbUser = "root";
-$dbPassword = "";
+$dbHost = "51.159.27.120";
+$dbUser = "workshop";
+$dbPassword = "Worksh@p2021";
 $dbName = "muriquis";
-$port = 3306;
+$port = 31217;
 
 ?>

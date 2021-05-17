@@ -1,3 +1,3 @@
 <?php
-require_once("./common/basket.php");
+require_once("../common/basket.php");
 ?>

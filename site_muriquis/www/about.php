@@ -1,3 +1,3 @@
 <?php
-require_once("./common/about.php");
+require_once("../common/about.php");
 ?>

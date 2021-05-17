@@ -1,3 +1,3 @@
 <?php
-require_once("./common/remake_db.php");
+require_once("../common/remake_db.php");
 ?>

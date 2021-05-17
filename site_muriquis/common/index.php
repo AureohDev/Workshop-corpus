@@ -2,7 +2,7 @@
 $ajax = false;
 $need_auth = false;
 $want_menu = true;
-require_once("./common/init.php");
+require_once("../common/init.php");
 
 function str_to_sqldate($str){
 	$tmp = explode("/",$str);

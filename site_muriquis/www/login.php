@@ -1,3 +1,3 @@
 <?php
-require_once("./common/login.php");
+require_once("../common/login.php");
 ?>

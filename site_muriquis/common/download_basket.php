@@ -2,7 +2,7 @@
 $ajax = true;
 $need_auth = false;
 $want_menu = false;
-require_once("./common/init.php");
+require_once("../common/init.php");
 
 if(!isset($_SESSION["basket"])){
 	$_SESSION["basket"] = [];
@@ -23,10 +23,10 @@ $SQL .= str_replace(" r.id ", " r.record_id ", $tmp);
 $res = $dbh->executeQuery($SQL);
 $files = [];
 while($row = $res->fetch_assoc()){
-	$files[] = "./files/".$row["filename"];
+	$files[] = "../files/".$row["filename"];
 }
 
-$zipname = './tmp/'.md5(time()).'.zip';
+$zipname = '../tmp/'.md5(time()).'.zip';
 $zip = new ZipArchive;
 $zip->open($zipname, ZipArchive::CREATE);
 foreach ($files as $file) {

@@ -4,6 +4,7 @@
 		{# Path to Bootstrap CSS #}
 		<link rel="stylesheet" type="text/css" href="./common/bootstrap-4.6.0-dist/css/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="./common/jquery-ui-1.12.1/jquery-ui.min.css">
+		<link rel="stylesheet" href="./common/bootstrap-icons/bootstrap-icons.css">
 		<link rel="stylesheet" type="text/css" href="color_local.css">
 		<link rel="stylesheet" type="text/css" href="./common/style.css">
 		<link rel="icon" type="image/png" href="img/favicon.png"/>
@@ -24,63 +25,93 @@
 	<body>
 
 		{% if want_menu == true %}
-			<div id='cssmenu'>
-				<ul>
-					<li>
-						<a href='index.php'>
-							<span>Home</span>
-						</a>
-					</li>
-					<li>
-						<a href='basket.php'>
-							<span>Basket</span>
-						</a>
-					</li>
-					<li>
-						<a href='about.php'>
-							<span>About</span>
-						</a>
-					</li>
-					{% if user_id != -1 %}
-						<li class='has-sub'>
-							<a href='#'>
-								<span>Database Management</span>
-							</a>
-							<ul>
-								<li><a href='manage_meta.php?table=record'><span>Records</span></a></li>
-								<li><a href='manage_meta.php?table=production'><span>Productions</span></a></li>
-								<li><a href='manage_meta.php?table=speaker'><span>Speakers</span></a></li>
-								<li><a href='remake_db.php'><span>Recalculate database</span></a></li>
-							</ul>
-						</li>
-						<li>
-							<a href='edit.php'>
-								<span>Add element</span>
+			{# <div id="navbarcss"> #}
+			<nav class="navbar navbar-expand-lg navbar-dark navbar-navbarcss">
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<div class="collapse navbar-collapse" id="navbarNavDropdown">
+					<ul class="nav navbar-nav mr-auto">
+						<li class="nav-item active">
+							<a class="nav-link" href="index.php">
+								<i class="bi bi-house"></i>
+								Home
+								<span class="sr-only">(current)</span>
 							</a>
 						</li>
-						<li class='last'>
-							<a href='login.php?logout=1'>
-								<span>Logout</span>
+						<li class="nav-item">
+							<a class="nav-link" href='basket.php'>
+								<i class="bi bi-basket"></i>
+								<span>Basket</span>
 							</a>
+						</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href='about.php' id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<i class="bi bi-info-square"></i>
+								<span>About</span>
+							</a>
+							<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+								<a class="dropdown-item" href='about.php?pid=1'>
+									<span>Muriquis’ Vocal Communication</span>
+								</a>
+								<a class="dropdown-item" href='about.php?pid=2'>
+									<span>Description of Data and Table</span>
+								</a>
+							</div>
 						</li>
 
-					</script>
+						{% if user_id != -1 %}
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									<span>Database Management</span>
+								</a>
+								<div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+									<a class="dropdown-item" href='manage_meta.php?table=record'>
+										<span>Records</span>
+									</a>
+									<a class="dropdown-item" href='manage_meta.php?table=production'>
+										<span>Productions</span>
+									</a>
+									<a class="dropdown-item" href='manage_meta.php?table=speaker'>
+										<span>Speakers</span>
+									</a>
+									<a class="dropdown-item" href='remake_db.php'>
+										<span>Recalculate database</span>
+									</a>
+								</div>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link" href='edit.php'>
+									<i class="bi bi-pencil"></i>
+									<span>Add element</span>
+								</a>
+							</li>
+						</ul>
+						<ul class="nav navbar-nav ml-auto">
+							<li class="nav-item">
+								<a class="nav-link" href='login.php?logout=1'>
+									<i class="bi bi-box-arrow-in-left"></i>
+									<span>Logout</span>
+								</a>
+							</li>
+						</ul>
 				{% else %}
-					<li>
-						<a href='login.php'>
-							<span>Admin</span>
-						</a>
-					</li>
+					</ul>
+					<ul class="nav navbar-nav ml-auto">
+						<li class="nav-item">
+							<a class="nav-link" href='login.php'>
+								<i class="bi bi-box-arrow-in-right"></i>
+								<span>Admin</span>
+							</a>
+						</li>
+					</ul>
 				{% endif %}
-			</ul>
-			{% if submenu is defined and submenu != ""%}
-				{{submenu|raw}}
-			{% endif %}
 
+			</div>
 		</div>
-		<br/>
-		<script type="text/javascript">
-			(function ($) {
+	</body>
+</html></body></html></nav>{# </div> #}<br/><script type="text/javascript">(function ($) {
 $(document).ready(function () {
 $('#cssmenu').prepend('<div id="menu-button">Menu</div>');
 $('#cssmenu #menu-button').on('click', function () {
@@ -92,7 +123,4 @@ menu.addClass('open');
 }
 });
 });
-})(jQuery);
-		</script>
-	{% endif %}
-	<div id="main">
+})(jQuery);</script>{% endif %}<div id="main">

@@ -1,54 +1,47 @@
-@font-face {
-  font-family: "Voces";
-  src: url("../fonts/Voces-regular.ttf");
-}
-
-body {
-  color: var(--body-color);
-  font-weight: bold;
-  background-color: var(--body-background-color);
-  font-family: "Voces", georgia, serif;
-}
-nav {
-  background-color: var(--menu-bg-color);
+body{
+	color: var(--body-color);
+	font-weight:bold;
+	background-color: var(--body-background-color);
+	font-family: georgia, serif;
 }
 .center {
-  margin-right: auto;
-  text-align: center;
+	margin-right: auto;
+	text-align: center;
+
 }
 
 /****** FILTERS *****/
 .queryfilterglobal {
-  display: inline;
+	display: inline;
 }
 .queryfilter {
-  float: left;
-  margin-left: auto;
-  margin-right: 10px;
-  border-radius: 25px;
-  padding: 10px;
-  width: auto;
-  height: auto;
-  background-color: var(--menu-bg-color);
-  color: var(--menu-text-color);
-  font-weight: normal;
+	float: left;
+	margin-left: auto;
+	margin-right: 10px;
+	border-radius: 25px;
+	padding: 10px; 
+	width: auto;
+	height: auto;
+	background-color: var(--menu-bg-color);
+	color: var(--menu-text-color);
+	font-weight: normal;
 }
-.queryfilter input {
-  margin-left: 10px;
-  margin-right: 10px;
-  margin-bottom: 5px;
+.queryfilter input{
+	margin-left: 10px;
+	margin-right 10px;
+	margin-bottom: 5px;
 }
-.queryfilter .label {
-  color: var(--menu-text-inverse-color);
-  background-color: var(--menu-text-color);
-  border-radius: 25px;
-  padding-left: 10px;
-  padding-right: 10px;
-  width: auto;
-  height: 20px;
+.queryfilter .label{
+	color: var(--menu-text-inverse-color);;
+	background-color: var(--menu-text-color);
+	border-radius: 25px;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: auto;
+    height: 20px;
 }
-.queryfilter .slider {
-  width: 300px;
+.queryfilter .slider{
+	width: 300px;
 }
 
 audio::-webkit-media-controls-play-button,
@@ -58,64 +51,64 @@ audio::-webkit-media-controls-panel {
 }
 
 /****** TABLE ******/
-.rTable {
-  display: table;
-  width: 99%;
+/* .rTable {
+  	display: table;
+  	width: 99%;
 }
 .rTable .odd {
-  background-color: var(--table-odd-background-color);
-  color: var(--table-odd-color);
+	background-color: var(--table-odd-background-color);
+	color: var(--table-odd-color);
 }
 .rTable .even {
-  background-color: var(--table-even-background-color);
-  color: var(--table-even-color);
+	background-color: var(--table-even-background-color);
+	color: var(--table-even-color);
 }
 
 .rTableRow {
-  display: table-row;
-  background-color: var(--table-even-background-color);
-  color: var(--table-odd-color);
+  	display: table-row;
+	background-color: var(--table-even-background-color);
+	color: var(--table-odd-color);
 }
 .rTableRow:hover {
-  background-color: var(--table-hover-background-color);
-  color: var(--table-hover-color);
+  	background-color: var(--table-hover-background-color);
+	color: var(--table-hover-color);
 }
 
-.rTableCell,
-.rTableHead {
-  display: table-cell;
-  padding: 3px 10px;
-  border: 1px solid var(--table-cell-border-color);
-  font-weight: normal;
+.rTableCell, .rTableHead {
+  	display: table-cell;
+  	padding: 3px 10px;
+  	border: 1px solid var(--table-cell-border-color);
+	font-weight: normal;
 }
 .rTableHeadCell {
-  color: var(--table-header-color);
-  display: table-cell;
-  background-color: var(--table-header-background-color);
-  font-weight: bold;
-  width: 10%;
-  padding: 3px 10px;
-  border: 1px solid var(--table-cell-border-color);
+	color: var(--table-header-color);
+	display: table-cell;
+  	background-color: var(--table-header-background-color);
+  	font-weight: bold;
+  	width:10%;
+  	padding: 3px 10px;
+  	border: 1px solid var(--table-cell-border-color);
 }
 .rTableHeading {
-  color: var(--table-header-color);
-  display: table-header-group;
-  background-color: var(--table-header-background-color);
-  font-weight: bold;
+	color: var(--table-header-color);
+  	display: table-header-group;
+  	background-color: var(--table-header-background-color);
+  	font-weight: bold;
 }
 .rTableFoot {
-  display: table-footer-group;
-  font-weight: bold;
-  background-color: #ddd;
+  	display: table-footer-group;
+  	font-weight: bold;
+  	background-color: #ddd;
 }
 .rTableBody {
-  display: table-row-group;
-}
+  	display: table-row-group;
+} */
+
 
 /****** MENU *******/
 /*@import url(http://fonts.googleapis.com/css?family=PT+Sans:400,700);*/
 #cssmenu {
-  background: var(--menu-bg-color);
+  background:var(--menu-bg-color);
   margin: 0;
   width: auto;
   padding: 0;
@@ -149,11 +142,11 @@ audio::-webkit-media-controls-panel {
   text-decoration: none;
   display: block;
   margin: 0;
-  -webkit-transition: color 0.2s ease;
-  -moz-transition: color 0.2s ease;
-  -ms-transition: color 0.2s ease;
-  -o-transition: color 0.2s ease;
-  transition: color 0.2s ease;
+  -webkit-transition: color .2s ease;
+  -moz-transition: color .2s ease;
+  -ms-transition: color .2s ease;
+  -o-transition: color .2s ease;
+  transition: color .2s ease;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
@@ -269,11 +262,11 @@ audio::-webkit-media-controls-panel {
   top: 0;
   z-index: 0;
   background: var(--menu-text-color);
-  -webkit-transition: height 0.2s;
-  -moz-transition: height 0.2s;
-  -ms-transition: height 0.2s;
-  -o-transition: height 0.2s;
-  transition: height 0.2s;
+  -webkit-transition: height .2s;
+  -moz-transition: height .2s;
+  -ms-transition: height .2s;
+  -o-transition: height .2s;
+  transition: height .2s;
 }
 #cssmenu > ul > li.has-sub > a {
   padding-right: 40px;
@@ -351,13 +344,7 @@ audio::-webkit-media-controls-panel {
   width: 170px;
   display: block;
 }
-@media all and (max-width: 800px),
-  only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px),
-  only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px),
-  only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px),
-  only screen and (min-device-pixel-ratio: 2) and (max-width: 1024px),
-  only screen and (min-resolution: 192dpi) and (max-width: 1024px),
-  only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
+@media all and (max-width: 800px), only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min--moz-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (-o-min-device-pixel-ratio: 2/1) and (max-width: 1024px), only screen and (min-device-pixel-ratio: 2) and (max-width: 1024px), only screen and (min-resolution: 192dpi) and (max-width: 1024px), only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
   #cssmenu > ul {
     max-height: 0;
     overflow: hidden;
@@ -464,7 +451,7 @@ audio::-webkit-media-controls-panel {
   #cssmenu #menu-button:after {
     color: var(--body-color);
     display: block;
-    content: "";
+    content: '';
     position: absolute;
     height: 3px;
     width: 22px;
@@ -475,7 +462,7 @@ audio::-webkit-media-controls-panel {
   }
   #cssmenu #menu-button:before {
     display: block;
-    content: "";
+    content: '';
     position: absolute;
     height: 3px;
     width: 22px;

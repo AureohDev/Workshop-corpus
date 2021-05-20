@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8">
+        <title>{{ title }}</title>
+        {% block header %}
+            <link rel="stylesheet" type="text/css" href="./common/bootstrap-4.6.0-dist/css/bootstrap.min.css">
+            <link rel="stylesheet" type="text/css" href="./common/jquery-ui-1.12.1/jquery-ui.min.css">
+            <link rel="stylesheet" type="text/css" href="color_local.css">
+            <link rel="stylesheet" type="text/css" href="./common/style.css">
+            <link rel="icon" type="image/png" href="img/favicon.png"/>
+
+            <style>
+                @font-face {
+                    font-family: "Voces";
+                    src: url("./common/Voces-font/Voces-regular.ttf");
+                }
+            </style>
+        {% endblock %}
+    </head>
+
+    <body>
+    <!-- Navbar -->
+
+   {# TODO: Navigation #}
+
+    <!-- Content -->
+    {% block body %}
+
+    {% endblock %}
+
+    <!-- Script -->
+    {% block script %}
+        <script type="text/javascript">
+            (function ($) {
+                $(document).ready(function () {
+                    $('#cssmenu').prepend('<div id="menu-button">Menu</div>');
+                    $('#cssmenu #menu-button').on('click', function () {
+                        var menu = $(this).next('ul');
+                        if (menu.hasClass('open')) {
+                            menu.removeClass('open');
+                        } else {
+                            menu.addClass('open');
+                        }
+                    });
+                });
+            })(jQuery);
+        </script>
+    {% endblock %}
+    </body>
+</html>

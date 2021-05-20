@@ -1,52 +1,77 @@
-{% include 'header.twig' %}
+{% extends 'base.twig' %}
 
-{% if not basket %}
-	{% include 'filter_table.twig' with {'values': values, 'metas':metas}%}
+{% block body %}
+	{% if not basket %}
+		{% include 'filter_table.twig' with {'values': values, 'metas':metas}%}
+	{% else %}
+		<a href='download_basket.php' target='_blank'>Download Basket</a><br/>&nbsp;<br/>
+	{% endif %}
+
+	<div class="rTable">
+		<div class="rTableHeading">
+			<div class="rTableHead">&nbsp;</div>
+			{% for data in metas["record"] %}
+				<div class="rTableHead"><span class="header">{{data["label"]}}</span></div>
+			{% endfor %}
+			<div class="rTableHead">&nbsp;</div>
+			{% for data in metas["production"] %}
+				<div class="rTableHead"><span class="header">{{data["label"]}}</span></div>
+			{% endfor %}
+			{% for data in metas["speaker"] %}
+				<div class="rTableHead"><span class="header">{{data["label"]}}</span></div>
+			{% endfor %}
+			<div class="rTableHead">&nbsp;</div>
+		</div>
+		{% for data in results %}
+			<div class="rTableRow {% if loop.index % 2 == 0%}even{% else %}odd{% endif %}" id="record{{ data["record_id"] }}">
+				{% include 'one_record.twig' with {'data': data, 'metas':metas} %}
+			</div>
+		{% endfor %}
+	</div>
+
+{% endblock %}
+
+{% block script %}
 	<script type="text/javascript">
 		$("#edit_form").validate();
-	</script>
-{% else %}
-	<a href='download_basket.php' target='_blank'>Download Basket</a><br/>&nbsp;<br/>
-{% endif %}
-
-{% include 'record_table.twig' with {'data': data, 'metas':metas}%}
-
-<script type="text/javascript">
-	$("#edit_form").validate();
-	function add_to_basket(rid){
-		$.ajax
-		    ({ 
-		        url: 'add_to_basket.php',
-		        data: "rid="+rid+"&act=add",
-		        type: 'post',
-		        success: function(result)
-		        {
-		            $('#b_'+rid+'_add').hide();
+		function add_to_basket(rid){
+			$.ajax
+			({
+				url: 'add_to_basket.php',
+				data: "rid="+rid+"&act=add",
+				type: 'post',
+				success: function(result)
+				{
+					$('#b_'+rid+'_add').hide();
 					$('#b_'+rid+'_rem').show();
-		        }
-		    });
-	}
-	function rem_from_basket(rid){
-		$.ajax
-		    ({ 
-		        url: 'add_to_basket.php',
-		        data: "rid="+rid+"&act=rem",
-		        type: 'post',
-		        success: function(result)
-		        {
-		            $('#b_'+rid+'_rem').hide();
+				}
+			});
+		}
+		function rem_from_basket(rid){
+			$.ajax
+			({
+				url: 'add_to_basket.php',
+				data: "rid="+rid+"&act=rem",
+				type: 'post',
+				success: function(result)
+				{
+					$('#b_'+rid+'_rem').hide();
 					$('#b_'+rid+'_add').show();
-		        }
-		    });
-	}
-	function clear_elt(element_id){
-		$('#'+element_id).val('');
-	}
-	$( function() {
-		$( ".dp" ).datepicker({
+				}
+			});
+		}
+		function clear_elt(element_id){
+			$('#'+element_id).val('');
+		}
+		$( function() {
+			$( ".dp" ).datepicker({
 				dateFormat: "dd/mm/yy",
 			});
-	  } );
-</script>
-
-{% include 'footer.twig' %}
+		} );
+	</script>
+	{% if not basket %}
+		<script type="text/javascript">
+			$("#edit_form").validate();
+		</script>
+	{% endif %}
+{% endblock %}

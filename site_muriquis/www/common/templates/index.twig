@@ -7,27 +7,31 @@
 		<a href='download_basket.php' target='_blank'>Download Basket</a><br/>&nbsp;<br/>
 	{% endif %}
 
-	<div class="rTable">
-		<div class="rTableHeading">
-			<div class="rTableHead">&nbsp;</div>
+	<table class="table table-responsive table-hover table-striped rounded-lg shadow text-center">
+		<thead>
+		<tr>
+			<th> </th>
 			{% for data in metas["record"] %}
-				<div class="rTableHead"><span class="header">{{data["label"]}}</span></div>
+				<th> {{ data["label"] }}</th>
 			{% endfor %}
-			<div class="rTableHead">&nbsp;</div>
+			<th> </th>
 			{% for data in metas["production"] %}
-				<div class="rTableHead"><span class="header">{{data["label"]}}</span></div>
+				<th> {{ data["label"] }}</th>
 			{% endfor %}
 			{% for data in metas["speaker"] %}
-				<div class="rTableHead"><span class="header">{{data["label"]}}</span></div>
+				<th> {{ data["label"] }}</th>
 			{% endfor %}
-			<div class="rTableHead">&nbsp;</div>
-		</div>
+			<th> </th>
+		</tr>
+		</thead>
+		<tbody>
 		{% for data in results %}
-			<div class="rTableRow {% if loop.index % 2 == 0%}even{% else %}odd{% endif %}" id="record{{ data["record_id"] }}">
+			<tr id="record{{ data["record_id"] }}">
 				{% include 'one_record.twig' with {'data': data, 'metas':metas} %}
-			</div>
+			</tr>
 		{% endfor %}
-	</div>
+		</tbody>
+	</table>
 
 {% endblock %}
 

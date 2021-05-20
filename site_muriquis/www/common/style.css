@@ -44,14 +44,14 @@ body{
 	width: 300px;
 }
 
-audio::-webkit-media-controls-play-button,
+/*audio::-webkit-media-controls-play-button,
      audio::-webkit-media-controls-panel {
      background-color:var(--body-background-color);
      color: var(--body-color);
-     }
+     } */
 
 /****** TABLE ******/
-.rTable {
+/* .rTable {
   	display: table;
   	width: 99%;
 }
@@ -102,7 +102,7 @@ audio::-webkit-media-controls-play-button,
 }
 .rTableBody {
   	display: table-row-group;
-}
+} */
 
 
 /****** MENU *******/

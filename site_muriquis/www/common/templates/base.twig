@@ -11,13 +11,26 @@
             <link rel="stylesheet" type="text/css" href="./common/assets/css/style.css">
             <link rel="icon" type="image/png" href="assets/img/favicon.png"/>
         {% endblock %}
+        <style>
+            /* ============ desktop view ============ */
+            @media all and (min-width: 992px) {
+                .navbar .nav-item .dropdown-menu{ display: none; }
+                .navbar .nav-item:hover .nav-link{   }
+                .navbar .nav-item:hover .dropdown-menu{ display: block; }
+                .navbar .nav-item .dropdown-menu{ margin-top:0; }
+            }
+            /* ============ desktop view .end// ============ */
+        </style>
     </head>
 
     <body>
     <!-- Navbar -->
-
     {% if want_menu == true %}
     <nav class="navbar navbar-expand-lg navbar-dark navbar-navbarcss">
+        <a class="navbar-brand" href="index.php">
+            <img src="assets/img/logo.png" width="64" height="64" alt="">
+        </a>
+
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -73,7 +86,7 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href='edit.php'>
+                    <a class="nav-link" href='edit_meta.php'>
                         <i class="bi bi-pencil"></i>
                         <span>Add element</span>
                     </a>
@@ -109,6 +122,11 @@
 
     {% endblock %}
     </div>
+
+    <!-- Footer -->
+    {% block footer %}
+        {% include 'footer.twig' %}
+    {% endblock %}
 
     <!-- Script -->
     {% block script %}

@@ -1,13 +1,13 @@
 :root {
-  --body-color: #800000;
-  --body-background-color: #FFEFD5;
+  --body-color: black;
+  --body-background-color: white;
   
-  --menu-text-color: #ffffff;
-  --menu-text-inverse-color: #000000;
-  --menu-bg-color: #556B2F;
+  --menu-text-color: black;
+  --menu-text-inverse-color: white;
+  --menu-bg-color: #e5e5e5;
   --menu-bg-hover-color: #4cb6ea;
   --menu-open-border-top-color : rgba(110, 110, 110, 0.25);
-  
+
   --table-odd-background-color: #58781c;
   --table-odd-color: #ffffff;
   --table-even-background-color: #709c25;

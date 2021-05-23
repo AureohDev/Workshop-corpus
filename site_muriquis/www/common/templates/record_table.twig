@@ -1,25 +1,59 @@
-<table class="table table-responsive table-hover table-striped rounded-lg shadow text-center">
+<table class="table table-responsive table-hover table-striped rounded-lg shadow text-center" id="table" data-toggle="table" data-show-toggle="true" data-cache="true" data-show-refresh="true" data-filter-control="true" data-sort-order="desc">
 	<thead>
 		<tr>
 			{% for data in metas["record"] %}
-				<th> {{ data["label"] }}</th>
+				{% if data.type == 'txt' %}
+					<th data-field="{{ data["field_name"] }}" data-sortable="true" data-filter-control="input">
+						{{ data["label"] }}
+					</th>
+				{% elseif data.type == 'int' or data.type == 'float'%}
+					<th data-field="{{ data["field_name"] }}" data-sortable="true" data-filter-control="select">
+						{{ data["label"] }}
+					</th>
+				{% else %}
+					<th data-field="{{ data["field_name"] }}" data-sortable="true" data-filter-control="datepicker">
+						{{ data["label"] }}
+					</th>
+				{% endif %}
 			{% endfor %}
-			<th> </th>
+			<th></th>
 			{% for data in metas["production"] %}
-				<th> {{ data["label"] }}</th>
+				{% if data.type == 'txt' %}
+					<th data-field="{{ data["field_name"] }}" data-sortable="true" data-filter-control="input">
+						{{ data["label"] }}
+					</th>
+				{% elseif data.type == 'int' or data.type == 'float'%}
+					<th data-field="{{ data["field_name"] }}" data-sortable="true" data-filter-control="select">
+						{{ data["label"] }}
+					</th>
+				{% else %}
+					<th data-field="{{ data["field_name"] }}" data-sortable="true" data-filter-control="datepicker">
+						{{ data["label"] }}
+					</th>
+				{% endif %}
 			{% endfor %}
 			{% for data in metas["speaker"] %}
-				<th> {{ data["label"] }}</th>
+				{% if data.type == 'txt' %}
+					<th data-field="{{ data["field_name"] }}" data-sortable="true" data-filter-control="input">
+						{{ data["label"] }}
+					</th>
+				{% elseif data.type == 'int' or data.type == 'float'%}
+					<th data-field="{{ data["field_name"] }}" data-sortable="true" data-filter-control="select">
+						{{ data["label"] }}
+					</th>
+				{% else %}
+					<th data-field="{{ data["field_name"] }}" data-sortable="true" data-filter-control="datepicker">
+						{{ data["label"] }}
+					</th>
+				{% endif %}
 			{% endfor %}
-			<th> </th>
-			<th> </th>
+			<th></th>
+			<th></th>
 		</tr>
 	</thead>
-	<tbody>
-	{% for data in results %}
-		<tr id="record{{ data["record_id"] }}">
-			{% include 'one_record.twig' with {'data': data, 'metas':metas} %}
-		</tr>
-	{% endfor %}
-	</tbody>
-</table>
+</tr></thead><tbody>
+{% for data in results %}
+	<tr id="record{{ data[" record_id"] }}">
+		{% include 'one_record.twig' with {'data': data, 'metas':metas} %}
+	</tr>
+{% endfor %}</tbody></table>

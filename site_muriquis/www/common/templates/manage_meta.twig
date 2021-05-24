@@ -1,33 +1,48 @@
 {% extends 'base.twig' %}
 
 {% block body %}
-<div>
-	<h1>Gestion de la base - table {{table}}</h1>
-	
-	Champs obligatoires
-	<ul>
-		{% for data in required %}
-			<li>{{ data }}</li>
-		{% endfor %}
-	</ul>
-	
-	Champs optionels
-	<div class="rTable">
-		<div class="rTableHeading">
-			<div class="rTableHead"></div>
-			<div class="rTableHead"><span class="header">Nom (unique)</span></div>
-			<div class="rTableHead"><span class="header">Type</span></div>
-			
-			<div class="rTableHead"><span class="header">Description</span></div>
-			<div class="rTableHead"><span class="header">Actif</span></div>
+	<div>
+		<h1>Gestion de la base - table
+			{{table}}</h1>
+
+		Champs obligatoires
+		<ul>
+			{% for data in required %}
+				<li>{{ data }}</li>
+			{% endfor %}
+		</ul>
+
+		Champs optionels
+
+		<table class="table table-hover table-striped table-bordered rounded-lg shadow text-center">
+			<thead>
+				<tr>
+					<th scope="col">
+						Nom (unique)
+					</th>
+					<th scope="col">
+						Type
+					</th>
+					<th scope="col">
+						Description
+					</th>
+					<th scope="col">
+						Actif
+					</th>
+					<th>Edit</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for data in meta %}
+					<div class="rTableRow {% if loop.index % 2 == 0%}even{% else %}odd{% endif %}" id="eq{{ data[" id"] }}">
+						{% include 'one_meta.twig' with {'data': data} %}
+					</div>
+				{% endfor %}
+			</tbody>
+		</table>
+		<div class="col text-center">
+			<a class="btn btn-secondary" href="edit_meta.php?metaid=-1&table={{table}}">Ajouter un nouveau champ optionel</a>
 		</div>
-		{% for data in meta %}
-		<div class="rTableRow {% if loop.index % 2 == 0%}even{% else %}odd{% endif %}" id="eq{{ data["id"] }}">
-			{% include 'one_meta.twig' with {'data': data} %}
-		</div>
-		{% endfor %}
 	</div>
-	<a href="edit_meta.php?metaid=-1&table={{table}}">Ajouter un nouveau champ optionel</a>
-</div>
 
 {% endblock %}

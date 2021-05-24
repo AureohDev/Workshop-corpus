@@ -1,3 +1,5 @@
+<p> Tips : scroll to left with the cursor on the table to see more informations</p>
+
 <table class="table table-responsive table-hover table-striped rounded-lg shadow text-center" id="table"
 	   data-toggle="table"
 	   data-cache="true"
@@ -5,6 +7,8 @@
 	   data-sort-order="desc">
 	<thead>
 		<tr>
+			<th></th>
+			<th></th>
 			{% for data in metas["record"] %}
 				{% if data.type == 'txt' %}
 					<th data-field="{{ data["field_name"] }}" data-sortable="true" data-filter-control="input">
@@ -51,8 +55,6 @@
 					</th>
 				{% endif %}
 			{% endfor %}
-			<th></th>
-			<th></th>
 		</tr>
 	</thead>
 </tr></thead><tbody>

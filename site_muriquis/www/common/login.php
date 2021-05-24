@@ -1,6 +1,6 @@
 <?php
 $need_auth = false;
-$want_menu = false;
+$want_menu = true;
 require_once("./common/init.php");
 
 $act = (isset($_POST["act"])?$_POST["act"]:Null);

@@ -1,4 +1,8 @@
-<table class="table table-responsive table-hover table-striped rounded-lg shadow text-center" id="table" data-toggle="table" data-show-toggle="true" data-cache="true" data-show-refresh="true" data-filter-control="true" data-sort-order="desc">
+<table class="table table-responsive table-hover table-striped rounded-lg shadow text-center" id="table"
+	   data-toggle="table"
+	   data-cache="true"
+	   data-filter-control="true"
+	   data-sort-order="desc">
 	<thead>
 		<tr>
 			{% for data in metas["record"] %}
@@ -7,7 +11,7 @@
 						{{ data["label"] }}
 					</th>
 				{% elseif data.type == 'int' or data.type == 'float'%}
-					<th data-field="{{ data["field_name"] }}" data-sortable="true" data-filter-control="select">
+					<th data-field="{{ data["field_name"] }}" data-sortable="true" data-filter-control="input">
 						{{ data["label"] }}
 					</th>
 				{% else %}

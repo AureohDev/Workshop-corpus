@@ -83,6 +83,10 @@ audio::-webkit-media-controls-panel {
 .table td, .table th {
  vertical-align: middle !important;
 }
+
+.fixed-table-header {
+  border-bottom: 1px solid #dee2e6;
+}
 /* .rTable {
   	display: table;
   	width: 99%;

@@ -1,7 +1,15 @@
 <p>
 	Tips : scroll to left with the cursor on the table to see more informations</p>
 
-<table class="table table-responsive table-hover table-striped rounded-lg shadow" id="table" data-toggle="table" data-cache="true" data-filter-control="true" data-sort-order="desc" data-resizable="true" data-sticky-header="true" data-sticky-header-offset-y="74">
+<table class="table table-responsive table-hover table-striped rounded-lg shadow" id="table" 
+data-toggle="table" 
+data-cache="true" 
+data-filter-control="true" 
+data-sort-order="desc" 
+data-height="420" 
+data-detail-view="true" 
+data-detail-formatter="playAudioDetailFormatter"
+data-detail-view-icon="false">
 	<thead>
 		<tr>
 			<th></th>
@@ -54,7 +62,8 @@
 			{% endfor %}
 		</tr>
 	</thead>
-</tr></thead><tbody class="text-center">
+</tr></thead>
+<tbody class="text-center" >
 {% for data in results %}
 	<tr id="record{{ data[" record_id"] }}">
 		{% include 'one_record.twig' with {'data': data, 'metas':metas} %}

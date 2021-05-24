@@ -10,11 +10,11 @@
 
 			<link rel="stylesheet" href="./common/assets/js/bootstrap-table/dist/bootstrap-table.min.css">
 			<link rel="stylesheet" href="./common/assets/js/bootstrap-table/dist/extensions/filter-control/bootstrap-table-filter-control.min.css">
-			<link rel="stylesheet" href="./common/assets/js/bootstrap-table/dist/extensions/sticky-header/bootstrap-table-sticky-header.css">
 
 			<link rel="stylesheet" type="text/css" href="assets/css/color_local.css">
 			<link rel="stylesheet" type="text/css" href="./common/assets/css/style.css">
 			<link rel="icon" type="image/png" href="assets/img/favicon.png"/>
+
 		{% endblock %}
 		<style>
 			/* ============ desktop view ============ */
@@ -127,7 +127,7 @@
 		{% endif %}
 </nav>
 <!-- Content -->
-<div class="container-fluid pt-3"> 
+<div class="container-fluid"> 
 	{% block body %}
 	
 	{% endblock %}
@@ -144,12 +144,30 @@
 	<script src="./common/assets/js/bootstrap.bundle.min.js"></script>
 	<script src="./common/assets/js/bootstrap-table/dist/bootstrap-table.js"></script>
 	<script src="./common/assets/js/bootstrap-table/dist/extensions/filter-control/bootstrap-table-filter-control.js"></script>
-	<script src="./common/assets/js/bootstrap-table/dist/extensions/sticky-header/bootstrap-table-sticky-header.js"></script>
 
 	<script>
 		$(function () {
-$('#table').bootstrapTable()
-})
+			$('#table').bootstrapTable();
+			$('#table').bootstrapTable('resetView',{height: window.innerHeight*0.7});
+		})
+
+	    function playAudioDetailFormatter(index, row, $element){
+		 console.log(index), console.log(row), console.log($element);
+		 return   '<audio controls preload="none"><source src="./assets/files/'+row["filename"]+'" type="audio/wav"> Your browser does not support the audio element.</audio>';
+		}
+
+		function showAudioTag(e){
+			$('#table').bootstrapTable('expandRow',e);
+			$('#b_'+e+'_play').hide();
+			$('#b_'+e+'_stop').show();
+		}
+
+		function hideAudioTag(e){
+			$('#table').bootstrapTable('collapseRow',e);
+			$('#b_'+e+'_play').show();
+			$('#b_'+e+'_stop').hide();
+		}
+	
 	</script>
 
 {% endblock %}

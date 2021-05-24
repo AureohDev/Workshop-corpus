@@ -3,12 +3,34 @@
   src: url("../fonts/Voces-regular.ttf");
 }
 
+html{
+  min-height: 100%;
+}
+
 body {
+  position: relative;
+  min-height: 100vh;
   color: var(--body-color);
   font-weight: bold;
   background-color: var(--body-background-color);
   font-family: "Voces", georgia, serif;
 }
+
+.container-fluid {
+  padding-bottom: 5rem;
+  margin-top: 74px;
+}
+
+footer {
+  color: var(--menu-text-color);
+  font-weight: bold;
+  background-color: var(--menu-bg-color);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 4.5rem;
+}
+
 nav {
   background-color: var(--menu-bg-color);
 }
@@ -35,7 +57,7 @@ nav {
 }
 .queryfilter input{
 	margin-left: 10px;
-	margin-right 10px;
+	margin-right: 10px;
 	margin-bottom: 5px;
 }
 .queryfilter .label{

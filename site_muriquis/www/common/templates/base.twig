@@ -37,9 +37,9 @@
 	<body>
 		<!-- Navbar -->
 		{% if want_menu == true %}
-			<nav class="navbar navbar-expand-lg navbar-dark navbar-navbarcss">
+			<nav class="navbar navbar-expand-lg navbar-dark navbar-navbarcss sticky-top">
 				<a class="navbar-brand" href="index.php">
-					<img src="assets/img/logo.png" width="64" height="64" alt="">
+					<img src="assets/img/logo.png" width="48" height="48" alt="logo">
 				</a>
 
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -125,14 +125,16 @@
 
 			</div>
 		{% endif %}
-	</body>
-</html></nav><!-- Content --><div class="container-fluid pt-3"> {% block body %}{% endblock %}
+</nav>
+<!-- Content -->
+<div class="container-fluid pt-3"> 
+	{% block body %}
+	
+	{% endblock %}
 </div>
 
 <!-- Footer -->
-{% block footer %}
-	{% include 'footer.twig' %}
-{% endblock %}
+{% include 'footer.twig' %}
 
 <!-- Script -->
 {% block javascript %}
@@ -150,4 +152,6 @@ $('#table').bootstrapTable()
 })
 	</script>
 
-{% endblock %}</body></html>
+{% endblock %}
+	</body>
+</html>

@@ -1,12 +1,12 @@
 <p>
 	Tips : scroll to left with the cursor on the table to see more informations</p>
 
-<table class="table table-responsive table-hover table-striped rounded-lg shadow text-center" id="table" data-toggle="table" data-cache="true" data-filter-control="true" data-sort-order="desc" data-resizable="true" data-sticky-header="true">
+<table class="table table-responsive table-hover table-striped rounded-lg shadow" id="table" data-toggle="table" data-cache="true" data-filter-control="true" data-sort-order="desc" data-resizable="true" data-sticky-header="true" data-sticky-header-offset-y="74">
 	<thead>
 		<tr>
 			<th></th>
 			<th></th>
-			{% for data in metas["record"] %}
+			{% for data in metas["record"] %}			
 				{% if data.type == 'txt' %}
 					<th data-field="{{ data["field_name"] }}" data-sortable="true" data-filter-control="input">
 						{{ data["label"] }}
@@ -54,7 +54,7 @@
 			{% endfor %}
 		</tr>
 	</thead>
-</tr></thead><tbody>
+</tr></thead><tbody class="text-center">
 {% for data in results %}
 	<tr id="record{{ data[" record_id"] }}">
 		{% include 'one_record.twig' with {'data': data, 'metas':metas} %}

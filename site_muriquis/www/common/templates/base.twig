@@ -10,7 +10,7 @@
 
 			<link rel="stylesheet" href="./common/assets/js/bootstrap-table/dist/bootstrap-table.min.css">
 			<link rel="stylesheet" href="./common/assets/js/bootstrap-table/dist/extensions/filter-control/bootstrap-table-filter-control.min.css">
-
+			<link rel="stylesheet" href="./common/assets/js/bootstrap-table/dist/extensions/sticky-header/bootstrap-table-sticky-header.css">
 
 			<link rel="stylesheet" type="text/css" href="assets/css/color_local.css">
 			<link rel="stylesheet" type="text/css" href="./common/assets/css/style.css">
@@ -125,10 +125,8 @@
 
 			</div>
 		{% endif %}
-</nav>
-		<!-- Content --><div class="container-fluid pt-3"> {% block body %}
-
-	{% endblock %}
+	</body>
+</html></nav><!-- Content --><div class="container-fluid pt-3"> {% block body %}{% endblock %}
 </div>
 
 <!-- Footer -->
@@ -144,11 +142,12 @@
 	<script src="./common/assets/js/bootstrap.bundle.min.js"></script>
 	<script src="./common/assets/js/bootstrap-table/dist/bootstrap-table.js"></script>
 	<script src="./common/assets/js/bootstrap-table/dist/extensions/filter-control/bootstrap-table-filter-control.js"></script>
+	<script src="./common/assets/js/bootstrap-table/dist/extensions/sticky-header/bootstrap-table-sticky-header.js"></script>
+
 	<script>
 		$(function () {
 $('#table').bootstrapTable()
 })
 	</script>
 
-{% endblock %}
-</body></html>
+{% endblock %}</body></html>

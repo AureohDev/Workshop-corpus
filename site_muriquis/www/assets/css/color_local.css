@@ -1,22 +1,12 @@
 :root {
-  --body-color: black;
-  --body-background-color: white;
+  --body-color: black; /* Couleur du texte */
+  --body-background-color: white; /* Couleur de fond du site */
   
-  --menu-text-color: black;
-  --menu-text-inverse-color: white;
-  --menu-bg-color: #e5e5e5;
-  --menu-bg-hover-color: #4cb6ea;
-  --menu-open-border-top-color : rgba(110, 110, 110, 0.25);
+  --menu-text-color: white; /* Couleur des textes & liens des Footer/Navbar */
+  --menu-text-color-hover: lightgray  ; /* Couleur au survol des textes & liens des Footer/Navbar */
+  --menu-bg-color: #58781c; /* Couleur de fond de l'interface */
 
-  --table-odd-background-color: #58781c;
-  --table-odd-color: #ffffff;
-  --table-even-background-color: #709c25;
-  --table-even-color: #ffffff;
-  --table-hover-background-color: #9c9425;
-  --table-hover-color: #ffffff;
+  --table-header-color: #ffffff; /* Couleur du texte du header du tableau */
+  --table-header-background-color: #556B2F; /* Couleur de fond du header du tableau */
   
-  --table-cell-border-color: #999999;
-  
-  --table-header-color: #ffffff;
-  --table-header-background-color: #556B2F;
 }

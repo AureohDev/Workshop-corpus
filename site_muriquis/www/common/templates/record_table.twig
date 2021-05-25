@@ -15,50 +15,20 @@ data-detail-view-icon="false">
 			<th></th>
 			<th></th>
 			{% for data in metas["record"] %}			
-				{% if data.type == 'txt' %}
 					<th data-field="{{ data["field_name"] }}" data-sortable="true" data-filter-control="input">
 						{{ data["label"] }}
 					</th>
-				{% elseif data.type == 'int' or data.type == 'float'%}
-					<th data-field="{{ data["field_name"] }}" data-sortable="true" data-filter-control="input">
-						{{ data["label"] }}
-					</th>
-				{% else %}
-					<th data-field="{{ data["field_name"] }}" data-sortable="true" data-filter-control="datepicker">
-						{{ data["label"] }}
-					</th>
-				{% endif %}
 			{% endfor %}
 			<th></th>
 			{% for data in metas["production"] %}
-				{% if data.type == 'txt' %}
 					<th data-field="{{ data["field_name"] }}" data-sortable="true" data-filter-control="input">
 						{{ data["label"] }}
 					</th>
-				{% elseif data.type == 'int' or data.type == 'float'%}
-					<th data-field="{{ data["field_name"] }}" data-sortable="true" data-filter-control="select">
-						{{ data["label"] }}
-					</th>
-				{% else %}
-					<th data-field="{{ data["field_name"] }}" data-sortable="true" data-filter-control="datepicker">
-						{{ data["label"] }}
-					</th>
-				{% endif %}
 			{% endfor %}
 			{% for data in metas["speaker"] %}
-				{% if data.type == 'txt' %}
 					<th data-field="{{ data["field_name"] }}" data-sortable="true" data-filter-control="input">
 						{{ data["label"] }}
 					</th>
-				{% elseif data.type == 'int' or data.type == 'float'%}
-					<th data-field="{{ data["field_name"] }}" data-sortable="true" data-filter-control="select">
-						{{ data["label"] }}
-					</th>
-				{% else %}
-					<th data-field="{{ data["field_name"] }}" data-sortable="true" data-filter-control="datepicker">
-						{{ data["label"] }}
-					</th>
-				{% endif %}
 			{% endfor %}
 		</tr>
 	</thead>
